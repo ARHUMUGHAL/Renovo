@@ -1,0 +1,15 @@
+.h1-high-opacity span{
+    display: inline-block;
+}
+.h1-high-opacity{
+    width: 120%;
+    overflow: hidden;
+}
+
+.h1-low-opacity span{
+    display: inline-block;
+}
+.h1-low-opacity{
+    width: 120%;
+    overflow: hidden;
+}
