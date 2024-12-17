@@ -8,8 +8,6 @@ import { CiYoutube } from "react-icons/ci";
 import { useRef } from "react";
 import { useEffect } from "react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
-gsap.registerPlugin(ScrollTrigger)
 
 const Herobox = () => {
 

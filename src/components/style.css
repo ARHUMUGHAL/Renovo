@@ -13,3 +13,17 @@
     width: 120%;
     overflow: hidden;
 }
+
+.h3-low-opacity span{
+    display: inline-block;
+}
+.h3-low-opacity{
+    overflow: hidden;
+}
+
+.h3-high-opacity span{
+    display: inline-block;
+}
+.h3-high-opacity{
+    overflow: hidden;
+}
