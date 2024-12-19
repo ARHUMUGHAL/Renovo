@@ -27,3 +27,17 @@
 .h3-high-opacity{
     overflow: hidden;
 }
+
+h5.low-service span{
+    display: inline-block;
+}
+h5.low-service{
+    overflow: hidden;
+}
+
+h1.high-service span{
+    display: inline-block;
+}
+h1.high-service{
+    overflow: hidden;
+}
