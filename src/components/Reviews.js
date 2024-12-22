@@ -1,31 +1,63 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import planImage from "../assests/9.png";
 import designImage from "../assests/10.png";
 import buildImage from "../assests/11.png";
 import { MdStar } from "react-icons/md";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+gsap.registerPlugin(ScrollTrigger)
 
 const Reviews = () => {
+
+  const reviewRef = useRef(null)
+  const reviewElem = gsap.utils.selector(reviewRef)
+
+  
+  
+  useEffect(()=>{
+
+    gsap.fromTo(reviewElem('h1.high-review span'),
+    {y : '50%',opacity : 0},
+    {y : 0,duration : 2, opacity : 1,stagger : 0.20 ,scrollTrigger : {trigger : reviewElem('h1.high-review span') ,start : 'top 60%'}})
+
+    gsap.fromTo(reviewElem('p.left-bio'),
+    {x : '-50%',opacity : 0},
+    {x : 0,duration : 2, opacity : 1,stagger : 0.20 ,scrollTrigger : {trigger : reviewElem('p.left-bio') ,start : 'top 60%'}})
+
+    gsap.fromTo(reviewElem('a.white-btn'),
+    {y : '50%',opacity : 0},
+    {y : 0,duration : 2, opacity : 1,stagger : 0.20 ,scrollTrigger : {trigger : reviewElem('a.white-btn') ,start : 'top 80%'}})
+
+    gsap.fromTo(reviewElem('.reviews-section'),
+    {y : '50%',opacity : 0},
+    {y : 0,duration : 2, opacity : 1,stagger : 0.20 ,scrollTrigger : {trigger : reviewElem('.reviews-section') ,start : 'top 70%'}})
+
+  },[])
+
+
   return (
-    <div className="w-screen h-[100vh] relative">
-      <h1 className="absolute top-[5%] left-[5%] text-[120px] font-playfair text-white opacity-[10%]">
-        REVIEWS
+    <div ref={reviewRef} className="w-screen h-[100vh] relative">
+      <h1 className="high-review absolute top-[5%] left-[5%] text-[120px] font-playfair text-white opacity-[10%]">
+      <span className="inline-block">REVIEWS</span>
       </h1>
-      <h1 className="absolute top-[10%] left-[8%] text-[120px] font-playfair text-white">
-        REVIEWS
+      <h1 className="high-review overflow-hidden absolute top-[10%] left-[8%] text-[120px] font-playfair text-white">
+        <span className="inline-block">REVIEWS</span>
       </h1>
-      <p className="text-white w-[16%] absolute top-[50%] left-[5%] text-[18px]">
+      
+      <p className="left-bio text-white w-[16%] absolute top-[50%] left-[5%] text-[18px]">
         Transforming Homes, Exceeding Expectations: Hear from Our Happy Clients
       </p>
       <a
         href="/"
-        className="inline-block w-[150px] h-[35px] bg-white flex items-center justify-center font-popins font-semibold rounded-[5px] absolute top-[80%] left-[5%]"
+        className="white-btn inline-block w-[150px] h-[35px] bg-white flex items-center justify-center font-popins font-semibold rounded-[5px] absolute top-[80%] left-[5%]"
       >
         SEE MORE
       </a>
       <div className="w-[60%] h-[60%] absolute top-[35%] right-[5%] flex justify-between">
-        <div className="w-[32%] relative h-full">
+
+        <div className="reviews-section w-[32%] relative h-full">
           <div className="w-full h-[70%] overflow-hidden">
-            <img src={planImage} />
+            <img className="hover:scale-[1.2] object-center transition duration-[1s] hover:cursor-pointer" src={planImage} />
           </div>
           <div className="absolute w-full h-[55%] bg-black opacity-[70%] backdrop-blur bottom-[0%]"></div>
           <div className="absolute bottom-[0%] font-popins w-full h-[55%] flex flex-col justify-between text-white p-2">
@@ -46,9 +78,9 @@ const Reviews = () => {
             </p>
           </div>
         </div>
-        <div className="w-[32%] relative h-full">
+        <div className="reviews-section w-[32%] relative h-full">
           <div className="w-full h-[70%] overflow-hidden">
-            <img src={designImage} />
+            <img className="hover:scale-[1.2] object-center transition duration-[1s] hover:cursor-pointer"  src={designImage} />
           </div>
           <div className="absolute w-full h-[55%] bg-black opacity-[70%] backdrop-blur bottom-[0%]"></div>
           <div className="absolute bottom-[0%] font-popins w-full h-[55%] flex flex-col justify-between text-white p-2">
@@ -69,9 +101,9 @@ const Reviews = () => {
             </p>
           </div>
         </div>
-        <div className="w-[32%] relative h-full">
+        <div className="reviews-section w-[32%] relative h-full">
           <div className="w-full h-[70%] overflow-hidden">
-            <img src={buildImage} />
+            <img className="hover:scale-[1.2] object-center transition duration-[1s] hover:cursor-pointer"  src={buildImage} />
           </div>
           <div className="absolute w-full h-[55%] bg-black opacity-[70%] backdrop-blur bottom-[0%]"></div>
           <div className="absolute bottom-[6%] font-popins w-full h-[50%] flex flex-col justify-between text-white p-2">
@@ -92,6 +124,7 @@ const Reviews = () => {
             </p>
           </div>
         </div>
+
       </div>
     </div>
   );
