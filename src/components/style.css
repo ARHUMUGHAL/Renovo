@@ -41,3 +41,17 @@ h1.high-service span{
 h1.high-service{
     overflow: hidden;
 }
+
+h1.h1-low span{
+    display: inline-block;
+}
+h1.h1-low{
+    overflow: hidden;
+}
+
+h1.h1-high span{
+    display: inline-block;
+}
+h1.h1-high{
+    overflow: hidden;
+}
